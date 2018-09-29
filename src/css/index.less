@@ -1,10 +1,82 @@
-body{
-    background: red;
-    .wrapper {
-        border: 1px soldi black;
-        transform: matrix3d(10deg, 10deg, 30deg);
+// 初始化样式
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-top: 60px;
+    box-sizing: border-box;
+    .song-img {
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+        height: 0;
+        padding-top: 50%;
+        border: 1px solid black;
+        .img-wrapper {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
-    .content {
-        background-color: plum;
+    .song-info {
+        width: 100%;
+        text-align: center;
+        height: 126px;
+        margin-top: 40px;
+        .song-name {
+            font-size: 24px;
+            line-height: 36px;
+            color:rgba(255, 255, 255, 0.86);
+            margin-bottom: 8px;
+        }
+        .singer-name,.album-name {
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 6px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+    .pro {
+        display: flex;
+        .cur-time,.all-time {
+            color: #fff;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .pro-wrapper {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            // border: 1px solid black;
+            .pro-bottom,.pro-top {
+                height: 1px;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+            }
+            .pro-bottom {
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+            .pro-top {
+                background-color: #fff;
+                transform: translateX(-100%);
+            }
+        }
     }
 }

@@ -91,7 +91,7 @@ gulp.task("css", function () {
     var options = [autoprefixer(), cssnano()];
     var page = gulp.src(folder.src + "css/*")
     .pipe(connect.reload())
-    page.pipe(less())
+    .pipe(less())
     if (!devMod) {
         page.pipe(postcss(options))
     }
@@ -109,6 +109,6 @@ gulp.task("connect", function() {
         livereload: true
     });
 })
-gulp.task("default", ["html", "images", "js", "css", "watch", "connect"], function () {
-    console.log("ok");
+gulp.task("default", ["html", "images", "js", "css", "watch", "connect"], function() {
+    console.log(devMod);
 })
