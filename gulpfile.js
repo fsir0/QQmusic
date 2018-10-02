@@ -27,7 +27,7 @@ var connect = require("gulp-connect");
 // 取环境变量
 // 当前为开发环境的时候不需要压缩，并且需要console
 // 当前为生产环境的时候需要压缩
-// 在控制台设置当前环境export NODE__DNV=development
+// 在控制台设置当前环境export NODE__ENV=development
 // console.log(process.env.NODE_ENV == "development") // true,用来做判断
 var devMod = process.env.NODE_ENV == "development";
 
