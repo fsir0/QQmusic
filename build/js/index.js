@@ -1,3 +1,4 @@
-console.log(123);
-console.log('456');
-console.log('888888888');
+var $ = window.Zepto;
+
+
+console.log(window.Zepto)
