@@ -99,3 +99,32 @@
   border-radius: 50%;
   background-color: #fff;
 }
+.wrapper .control {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 60px;
+  display: flex;
+}
+.wrapper .control .btn-wrapper {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 20px 20px;
+}
+.wrapper .control .like-btn {
+  background: url();
+}
+.wrapper .control .prev-btn {
+  background: url();
+}
+.wrapper .control .play-btn {
+  background: url();
+}
+.wrapper .control .next-btn {
+  background: url();
+}
+.wrapper .control .colun-btn {
+  background: url();
+}
