@@ -1,0 +1,29 @@
+[
+    {
+        "images": "/source/song_1.png",
+        "audio": "/source/cong_1.mp3",
+        "name": "第一首歌曲",
+        "album": "意外",
+        "singer": "作者",
+        "duration": 253,
+        "isLike": false
+    },
+    {
+        "images": "/source/song_1.png",
+        "audio": "/source/cong_1.mp3",
+        "name": "第二首歌曲",
+        "album": "意外",
+        "singer": "作者",
+        "duration": 253,
+        "isLike": false
+    },
+    {
+        "images": "/source/song_1.png",
+        "audio": "/source/cong_1.mp3",
+        "name": "第三首歌曲",
+        "album": "意外",
+        "singer": "作者",
+        "duration": 253,
+        "isLike": false
+    }
+]

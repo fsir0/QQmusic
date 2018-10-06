@@ -82,7 +82,7 @@ gulp.task("js", function () {
     if (!devMod) {
         // 用于去除console
         page.pipe(stripDebug())
-        page.pipe(concat("main.js"))
+        // page.pipe(concat("main.js"))
         page.pipe(uglify())
     }
     page.pipe(gulp.dest(folder.build + "js"))
