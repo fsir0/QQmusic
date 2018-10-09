@@ -4,6 +4,11 @@
   list-style: none;
   font-size: 12px;
 }
+body {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 100%;
+}
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -17,7 +22,6 @@
   width: 50%;
   height: 0;
   padding-top: 50%;
-  border: 1px solid black;
 }
 .wrapper .song-img .img-wrapper {
   position: absolute;
@@ -114,6 +118,7 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 20px 20px;
+  color: #fff;
 }
 .wrapper .control .like-btn {
   background: url();

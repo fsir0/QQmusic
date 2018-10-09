@@ -1,18 +1,18 @@
-// 控制按钮
+// 控制上/下一曲按钮
 (function($, root) {
-    root.controlManager = function controlManager(len) {
+    function controlManager(len) {
         this.index = index;
-        this.len = 0;
+        this.len = len;
     }
 
     controlManager.prototype = {
         prev: function() {
             // index--;
-            this.getIndex(-1);
+            return this.getIndex(-1);
         },
         next: function() {
             // index++;
-            this.getIndex(+1);
+            return this.getIndex(+1);
         },
         getIndex: function(val) {
             var index = this.index;
@@ -22,5 +22,7 @@
             return curIndex;
         }
     }
+
+    root.controlManager = controlManager;
 
 })(window.Zepto, window.player || (window.player = {}))

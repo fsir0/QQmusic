@@ -13,11 +13,12 @@
         _img.src = src;
         _img.onload = function() {
             $scope.find(".song-img img").attr("src", src);
+            root.blurImg(_img, $scope);
         }
     }
     root.render = function render(data) {
         if(!data) {
-            console.log("未获取到数据");
+            console.log("render未获取到数据");
             return;
         }
         renderInfo(data);

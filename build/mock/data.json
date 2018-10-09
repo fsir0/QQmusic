@@ -1,26 +1,26 @@
 [
     {
-        "images": "/source/song_1.png",
-        "audio": "/source/cong_1.mp3",
-        "name": "第一首歌曲",
+        "images": "/source/My-soul.PNG",
+        "audio": "/source/July - My Soul.mp3",
+        "name": "My soul",
         "album": "意外",
         "singer": "作者",
         "duration": 253,
         "isLike": false
     },
     {
-        "images": "/source/song_1.png",
-        "audio": "/source/cong_1.mp3",
-        "name": "第二首歌曲",
+        "images": "/source/卡农.PNG",
+        "audio": "/source/vh - 卡农.mp3",
+        "name": "卡农",
         "album": "意外",
         "singer": "作者",
         "duration": 253,
         "isLike": false
     },
     {
-        "images": "/source/song_1.png",
-        "audio": "/source/cong_1.mp3",
-        "name": "第三首歌曲",
+        "images": "/source/一丝不挂.PNG",
+        "audio": "/source/陈奕迅 - 一丝不挂.mp3",
+        "name": "一丝不挂",
         "album": "意外",
         "singer": "作者",
         "duration": 253,
