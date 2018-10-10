@@ -41,17 +41,17 @@ function bindTouch() {
     var offset = $scope.find('.pro-bottom').offset();
     var left = offset.left;
     var width = offset.width;
-    $sliderBottom.on('touchend', function(e) {
-        var x = e.changedTouches[0].clientX;
-        var per = (x - left) / width;
-        // 点击时判断百分比大于1或则小于0时失效
-        if(per <= 0 || per >= 1) {
-            return;
-        }
-        root.pro.update(per);
-    });
+    // $sliderBottom.on('touchend', function(e) {
+    //     var x = e.changedTouches[0].clientX;
+    //     var per = (x - left) / width;
+    //     // 点击时判断百分比大于1或则小于0时失效
+    //     if(per <= 0 || per >= 1) {
+    //         return;
+    //     }
+    //     root.pro.update(per);
+    // });
     $slider.on('touchstart', function() {
-
+        root.pro.stop();
     }).on('touchmove', function(e) {
         // console.log(e) // 找到e中的clientX
         var x = e.changedTouches[0].clientX;
@@ -60,12 +60,21 @@ function bindTouch() {
         if(per > 0 && per < 1) {
             root.pro.update(per);
         } else if( per <= 0) {
-            root.pro.update(0);
+            // root.pro.update(0);
         } else {
-            root.pro.update(0.9999);
+            // root.pro.update(0.9999);
         }
-    }).on('touchend', function() {
-        
+    }).on('touchend', function(e) {
+        var x = e.changedTouches[0].clientX;
+        var per = (x - left) / width;
+        if(per > 0 && per < 1) {
+            // 获取当前拖动到的时间用于控制音乐的位置
+            var curTime = per * songList[controlManager.index].duration;
+            audio.playTo(curTime);
+            root.pro.start(per);
+        } else {
+            // audio.pause();
+        }
     })
 }
 function getData(url) {

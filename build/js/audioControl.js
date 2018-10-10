@@ -20,6 +20,11 @@
             } else if(this.status == "pause") {
                 this.audio.pause();
             }
+        },
+        // 给audio增加playTo方法,让音乐从指定的起点开始播
+        playTo: function(time) {
+            this.audio.currentTime = time;
+            this.play();
         }
     }
     root.audioControl = audioControl;
