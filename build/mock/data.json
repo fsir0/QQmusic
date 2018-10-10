@@ -5,7 +5,7 @@
         "name": "My soul",
         "album": "意外",
         "singer": "作者",
-        "duration": 253,
+        "duration": 230,
         "isLike": false
     },
     {
@@ -14,7 +14,7 @@
         "name": "卡农",
         "album": "意外",
         "singer": "作者",
-        "duration": 253,
+        "duration": 304,
         "isLike": false
     },
     {
@@ -23,7 +23,7 @@
         "name": "一丝不挂",
         "album": "意外",
         "singer": "作者",
-        "duration": 253,
+        "duration": 242,
         "isLike": false
     }
 ]
