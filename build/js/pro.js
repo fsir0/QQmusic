@@ -40,6 +40,10 @@
                 // 类似于setTimeout
                 frameId = requestAnimationFrame(frame);
                 update(percent);
+            } else {
+                // 百分比为1的时候则触发下一首, 给个参数代表时自动开始下一首
+                $scope.find(".next-btn").trigger("click", true);
+                root.pro.start(0);
             }
         }
         frame();
