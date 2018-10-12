@@ -5,7 +5,7 @@ var index = 0;
 var songList;
 var audio = new root.audioControl();
 function bindEvent() {
-    $scope.on("play:change", function(e, index, p) {
+    $scope.on("play:change", function(e, index) {
         audio.getAudio(songList[index].audio);
         if(audio == "play") {
             audio.play();
@@ -17,12 +17,16 @@ function bindEvent() {
     }).on("click", ".prev-btn", function() {
         // 调用封装controlManager的判断当前index值
         index = controlManager.prev();
+        // 这里将进度条以及进度条的缓存置零并且停止运动
+        // 在play:change中判断是否需要继续运动
         root.pro.start(0);
+        root.pro.stop();
         $scope.trigger("play:change", index);
         // 给下一首绑定事件
     }).on("click", ".next-btn", function() {
-        root.pro.start(0);
         index = controlManager.next();
+        root.pro.start(0);
+        root.pro.stop();
         $scope.trigger("play:change", index);
         // 给暂停和播放绑定事件
     }).on("click", ".play-btn", function() {
@@ -61,8 +65,6 @@ function bindTouch() {
         var per = (x - left) / width;
         // per在0~1实现拖拽,在之外进行置位处理
         if(per > 0 && per < 1) {
-            console.log(per);
-            console.log(root.pro.update);
             // 仅仅更新进度条，在下一个事件中触发运动
             root.pro.update(per);
         } else if( per <= 0) {
