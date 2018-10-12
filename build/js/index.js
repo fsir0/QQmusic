@@ -30,13 +30,18 @@ function bindEvent() {
         $scope.trigger("play:change", index);
         // 给暂停和播放绑定事件
     }).on("click", ".play-btn", function() {
+        $scope.find(".play-btn").toggleClass("pause-btn");
         if(audio.status == "play") {
+            // $scope.find(".play-btn").removeClass("pause-btn");
             audio.pause();
             root.pro.stop();
         } else {
+            // $scope.find(".play-btn").addClass("pause-btn");
             audio.play();
             root.pro.start();
         }
+    }).on("click", ".like-btn", function() {
+        $scope.find(".like-btn").toggleClass("liked");
     });
     bindTouch();
 }
@@ -75,6 +80,7 @@ function bindTouch() {
     }).on('touchend', function(e) {
         var x = e.changedTouches[0].clientX;
         var per = (x - left) / width;
+        $scope.find(".play-btn").addClass("pause-btn");
         if(per > 0 && per < 1) {
             // 获取当前拖动到的时间用于控制音乐的位置
             var curTime = per * songList[controlManager.index].duration;

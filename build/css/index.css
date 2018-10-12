@@ -111,6 +111,27 @@ body {
   height: 60px;
   display: flex;
 }
+.wrapper .control .like-btn {
+  background: url("../images/icon-like.png");
+}
+.wrapper .control .liked {
+  background: url("../images/icon-like-solid.png");
+}
+.wrapper .control .prev-btn {
+  background: url("../images/icon-prev.png");
+}
+.wrapper .control .play-btn {
+  background: url("../images/icon-play.png");
+}
+.wrapper .control .pause-btn {
+  background: url("../images/icon-pause.png");
+}
+.wrapper .control .next-btn {
+  background: url("../images/icon-next.png");
+}
+.wrapper .control .colum-btn {
+  background: url("../images/icon-list.png");
+}
 .wrapper .control .btn-wrapper {
   text-align: center;
   line-height: 60px;
@@ -119,19 +140,4 @@ body {
   background-position: 50% 50%;
   background-size: 20px 20px;
   color: #fff;
-}
-.wrapper .control .like-btn {
-  background: url();
-}
-.wrapper .control .prev-btn {
-  background: url();
-}
-.wrapper .control .play-btn {
-  background: url();
-}
-.wrapper .control .next-btn {
-  background: url();
-}
-.wrapper .control .colun-btn {
-  background: url();
 }

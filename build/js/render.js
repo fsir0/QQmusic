@@ -16,6 +16,13 @@
             root.blurImg(_img, $scope);
         }
     }
+    function renderLike(isLike) {
+        if(isLike) {
+            $scope.find(".like-btn").addClass("liked");
+        } else {
+            $scope.find(".like-btn").removeClass("liked");
+        }
+    }
     root.render = function render(data) {
         if(!data) {
             console.log("render未获取到数据");
@@ -23,6 +30,7 @@
         }
         renderInfo(data);
         renderImg(data.images);
+        renderLike(data.isLike);
     }
     // 通过window.player来暴露此函数
 })(window.Zepto, window.player || (window.player = {}))
