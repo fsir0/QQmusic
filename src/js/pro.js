@@ -28,12 +28,13 @@
     }
     // 用requestAnimationFrame记录播放事件
     function start(p) {
-        p = p || lastePercent;
+        // 如传入百分比，则用此百分比作为累加百分比基数
+        lastePercent = p == undefined ? lastePercent : p;
         startTime = new Date().getTime();
         // requestAnimationFrame根据当前浏览器的驱动事件来触发事件
         function frame() {
             var curTime = new Date().getTime();
-            var percent = p + (curTime - startTime) / (curDuration * 1000);
+            var percent = lastePercent + (curTime - startTime) / (curDuration * 1000);
             // 判断当前时间不能超过总时长，超过则不执行更新时间了，并且不再循环此函数
             if(percent < 1) {
                 // 类似于setTimeout

@@ -5,7 +5,7 @@ var index = 0;
 var songList;
 var audio = new root.audioControl();
 function bindEvent() {
-    $scope.on("play:change", function(e, index) {
+    $scope.on("play:change", function(e, index, p) {
         audio.getAudio(songList[index].audio);
         if(audio == "play") {
             audio.play();
@@ -17,9 +17,11 @@ function bindEvent() {
     }).on("click", ".prev-btn", function() {
         // 调用封装controlManager的判断当前index值
         index = controlManager.prev();
+        root.pro.start(0);
         $scope.trigger("play:change", index);
         // 给下一首绑定事件
     }).on("click", ".next-btn", function() {
+        root.pro.start(0);
         index = controlManager.next();
         $scope.trigger("play:change", index);
         // 给暂停和播放绑定事件
@@ -51,6 +53,7 @@ function bindTouch() {
     //     root.pro.update(per);
     // });
     $slider.on('touchstart', function() {
+        // 拖动的时候让进度条停止但是音乐不停止
         root.pro.stop();
     }).on('touchmove', function(e) {
         // console.log(e) // 找到e中的clientX
@@ -58,11 +61,14 @@ function bindTouch() {
         var per = (x - left) / width;
         // per在0~1实现拖拽,在之外进行置位处理
         if(per > 0 && per < 1) {
+            console.log(per);
+            console.log(root.pro.update);
+            // 仅仅更新进度条，在下一个事件中触发运动
             root.pro.update(per);
         } else if( per <= 0) {
-            // root.pro.update(0);
+            root.pro.update(0);
         } else {
-            // root.pro.update(0.9999);
+            root.pro.update(0.9999);
         }
     }).on('touchend', function(e) {
         var x = e.changedTouches[0].clientX;
@@ -70,10 +76,17 @@ function bindTouch() {
         if(per > 0 && per < 1) {
             // 获取当前拖动到的时间用于控制音乐的位置
             var curTime = per * songList[controlManager.index].duration;
+            // 控制声音从当前秒数开始播放
             audio.playTo(curTime);
+            // 控制进度条从当前百分比开始运动
             root.pro.start(per);
+        } else if(per < 0) {
+            // 控制歌曲从0开始播放
+            audio.playTo(0);
+            // 控制进度条从0开始运动
+            root.pro.start(0);
         } else {
-            // audio.pause();
+            $scope.find('.next-btn').trigger('click');
         }
     })
 }
