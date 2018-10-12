@@ -42,7 +42,7 @@
                 update(percent);
             } else {
                 // 百分比为1的时候则触发下一首, 给个参数代表时自动开始下一首
-                $scope.find(".next-btn").trigger("click", true);
+                $scope.find(".next-btn").trigger("click");
                 root.pro.start(0);
             }
         }

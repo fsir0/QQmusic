@@ -42,6 +42,10 @@ function bindEvent() {
         }
     }).on("click", ".like-btn", function() {
         $scope.find(".like-btn").toggleClass("liked");
+        songList[index].isLike = !songList[index].isLike;
+        console.log(songList);
+        // 待调试
+        // postData("../mock/accept.json", songList);
     });
     bindTouch();
 }
@@ -114,4 +118,17 @@ function getData(url) {
         }
     })
 }
- getData("../mock/data.json")
+function postData(url, data) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: data,
+        successL: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log('post error' + err);
+        }
+    })
+}
+getData("../mock/data.json")
