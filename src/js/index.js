@@ -43,7 +43,7 @@ function bindEvent() {
     }).on("click", ".like-btn", function() {
         $scope.find(".like-btn").toggleClass("liked");
         songList[index].isLike = !songList[index].isLike;
-        console.log(songList);
+        // console.log(songList);
         // 待调试
         // postData("../mock/accept.json", songList);
     });
