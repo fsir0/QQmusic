@@ -143,4 +143,56 @@ body {
             color: #fff;
         }
     }
+    .mark {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+    }
+    .song-list {
+        background-color: #fff;
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        .list-tit {
+            height: 40px;
+            width: 100%;
+            padding-left: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 40px;
+            border-bottom: 1px dotted #515151;
+        }
+        .list-close-btn {
+            position: absolute;
+            font-size: 16px;
+            right: 10px;
+            top: 10px;
+            color: #666;
+        }
+        ul {
+            width: 100%;
+            text-align: center;
+            height: 160px;
+            overflow: scroll;
+            li {
+                position: relative;
+                display: inline-block;
+                text-align: left;
+                width: 90%;
+                height: 35px;
+                line-height: 35px;
+                font-size: 16px;
+                overflow: hidden;
+            }
+            .selected {
+                color: #f22;
+            }
+        }
+    }
 }
