@@ -9,12 +9,12 @@
     };
     function show() {
         MyfadeIn($mark, 'opacity', '0.8');
-        // MyfadeIn($songList, 'bottom', '0');
+        MyfadeIn($songList, 'bottom', '0');
     };
     function hide() {
-        // $songList.css('bottom', '-200px');
+        $songList.css('bottom', '-200px');
         $mark.css('opacity', '0');
-        // setTimeout(() => $mark.css('display', 'none'), 10);
+        $mark.css('display', 'none');
     }
     root.listControl = {
         show,
