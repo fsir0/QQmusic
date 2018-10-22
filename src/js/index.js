@@ -46,6 +46,15 @@ function bindEvent() {
         // console.log(songList);
         // 待调试
         // postData("../mock/accept.json", songList);
+        // 打开音乐列表
+    }).on('click', '.colum-btn', function() {
+        root.listControl.show();
+        // 关闭音乐列表
+    }).on('click', '.list-close-btn', function() {
+        root.listControl.hide();
+        // 点击遮罩层的时候也进行关闭处理
+    }).on('click', '.mark', function() {
+        root.listControl.hide();
     });
     bindTouch();
 }
