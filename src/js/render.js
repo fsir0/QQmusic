@@ -1,4 +1,4 @@
-// 渲染操作
+// 单首渲染操作
 
 (function($, root) {
     var $scope = $(document.body);

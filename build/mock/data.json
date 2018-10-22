@@ -1,10 +1,10 @@
-[
+﻿[
     {
         "images": "/source/My-soul.PNG",
         "audio": "/source/July - My Soul.mp3",
         "name": "My soul",
         "album": "意外",
-        "singer": "作者",
+        "singer": "薛之谦",
         "duration": 230,
         "isLike": false
     },
@@ -12,8 +12,8 @@
         "images": "/source/卡农.PNG",
         "audio": "/source/vh - 卡农.mp3",
         "name": "卡农",
-        "album": "意外",
-        "singer": "作者",
+        "album": "我不晓得",
+        "singer": "不是我",
         "duration": 304,
         "isLike": true
     },
@@ -21,8 +21,8 @@
         "images": "/source/一丝不挂.PNG",
         "audio": "/source/陈奕迅 - 一丝不挂.mp3",
         "name": "一丝不挂",
-        "album": "意外",
-        "singer": "作者",
+        "album": "一丝不挂",
+        "singer": "陈奕迅",
         "duration": 242,
         "isLike": false
     },

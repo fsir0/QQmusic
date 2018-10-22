@@ -7,12 +7,15 @@ var audio = new root.audioControl();
 function bindEvent() {
     $scope.on("play:change", function(e, index) {
         audio.getAudio(songList[index].audio);
-        if(audio == "play") {
-            audio.play();
-            root.pro.start();
-        }
+        // 此处判断失效,需要进行优化
+        // if(audio == "play") {
+        //     audio.play();
+        //     root.pro.start();
+        // }
         root.pro.renderAllTime(songList[index].duration);
         root.render(songList[index]);
+        // 对正在播放的歌曲列表进行增加calss处理
+        $scope.find('ul.list').find('li').eq(index).addClass('selected').siblings().removeClass('selected');
         // 给上一首绑定事件
     }).on("click", ".prev-btn", function() {
         // 调用封装controlManager的判断当前index值
@@ -49,6 +52,13 @@ function bindEvent() {
         // 打开音乐列表
     }).on('click', '.colum-btn', function() {
         root.listControl.show();
+        // 给列表的li加上点击事件
+        $scope.find("ul.list").find('li').on('click', function() {
+            index = $(this).index();
+            $scope.trigger("play:change", index);
+            root.pro.start(0);
+            root.pro.stop();
+        })
         // 关闭音乐列表
     }).on('click', '.list-close-btn', function() {
         root.listControl.hide();
@@ -120,6 +130,7 @@ function getData(url) {
             bindEvent();
             controlManager = new root.controlManager(data.length);
             root.render(data[0]);
+            root.listControl.listRender(data);
             $scope.trigger("play:change", index);
         },
         error: function(err) {
