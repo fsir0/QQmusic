@@ -20,6 +20,9 @@
             var curIndex = (index + len + val) % len;
             this.index = curIndex;
             return curIndex;
+        },
+        updateIndex: function(index) {
+            this.index = index;
         }
     }
 

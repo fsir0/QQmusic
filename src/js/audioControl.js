@@ -15,11 +15,12 @@
         getAudio: function(src) {
             this.audio.src = src;
             this.audio.load();
-            if(this.status == "play") {
-                this.audio.play();
-            } else if(this.status == "pause") {
-                this.audio.pause();
-            }
+            // 在index中判断就不用在此处再判断了
+            // if(this.status == "play") {
+            //     this.audio.play();
+            // } else if(this.status == "pause") {
+            //     this.audio.pause();
+            // }
         },
         // 给audio增加playTo方法,让音乐从指定的起点开始播
         playTo: function(time) {

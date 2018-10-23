@@ -8,10 +8,9 @@ function bindEvent() {
     $scope.on("play:change", function(e, index) {
         audio.getAudio(songList[index].audio);
         // 此处判断失效,需要进行优化
-        // if(audio == "play") {
-        //     audio.play();
-        //     root.pro.start();
-        // }
+        if(audio.status == "play") {
+            audio.play();
+        }
         root.pro.renderAllTime(songList[index].duration);
         root.render(songList[index]);
         // 对正在播放的歌曲列表进行增加calss处理
@@ -55,9 +54,10 @@ function bindEvent() {
         // 给列表的li加上点击事件
         $scope.find("ul.list").find('li').on('click', function() {
             index = $(this).index();
-            $scope.trigger("play:change", index);
+            controlManager.updateIndex(index);
             root.pro.start(0);
             root.pro.stop();
+            $scope.trigger("play:change", index);
         })
         // 关闭音乐列表
     }).on('click', '.list-close-btn', function() {
