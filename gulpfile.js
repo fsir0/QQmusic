@@ -6,6 +6,8 @@ var imagemin = require("gulp-imagemin");
 var newer = require("gulp-newer");
 // 压缩html
 var htmlClean = require("gulp-htmlClean");
+// 转义es6
+var babel = require("gulp-babel");
 // 压缩js
 var uglify = require("gulp-uglify");
 // 去除文件中的debugger 和 console
@@ -83,7 +85,10 @@ gulp.task("js", function () {
         // 用于去除console
         page.pipe(stripDebug())
         // page.pipe(concat("main.js"))
-        page.pipe(uglify())
+        // 转义es6
+        page.pipe(babel())
+        // 压缩js
+        // page.pipe(uglify())
     }
     page.pipe(gulp.dest(folder.build + "js"))
 })
